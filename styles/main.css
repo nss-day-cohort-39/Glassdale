@@ -1,12 +1,35 @@
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Patua One", serif;
+  letter-spacing: 2px;
+}
+
+
+
 .container {
     display: flex;
     flex-direction: column;
+    font-size: 1.25rem;
 }
+
 .criminalsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
 .criminal {
     border: 1px dotted darkmagenta;
     background-color: palevioletred;
@@ -14,7 +37,4 @@
     display: flex;
     flex-direction: column;
     flex-basis: 20%;
-}
-.criminal p, li {
-    font-size: small;
 }
