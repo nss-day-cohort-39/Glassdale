@@ -22,7 +22,7 @@ contentTarget.addEventListener("change", changeEvent => {
     }
 })
 
-const ConvictionSelect = () => {
+export const ConvictionSelect = () => {
     // Get all convictions from application state
     const convictions = useConvictions()
 
@@ -46,10 +46,3 @@ const ConvictionSelect = () => {
 
     render(convictions)
 }
-
-export default ConvictionSelect
-
-
-
-
-

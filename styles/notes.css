@@ -1,3 +1,18 @@
+.notesContainer {
+    flex: 1;
+}
+
+.note {
+    border: 1px dotted dodgerblue;
+    margin: 0.5rem 0;
+    padding: 0.3rem 1.5rem;
+    background-color: lightblue;
+}
+
+.noteFormContainer {
+    margin: 2rem 20%;
+}
+
 .invisible {
     display:none;
 }

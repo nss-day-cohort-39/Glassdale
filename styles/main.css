@@ -16,9 +16,24 @@ textarea {
 	line-height: 1.5;
 }
 
+textarea {
+    width: 30rem;
+    height: 7rem;
+}
+
+input {
+    width: 30rem;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
+}
+
+label {
+    display: inline-block;
+    min-width: 7rem;
+    vertical-align: top;
 }
 
 .container {

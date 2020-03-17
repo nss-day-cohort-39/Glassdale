@@ -11,7 +11,7 @@ const dispatchStateChangeEvent = () => {
 /*
     Allow other modules to get a copy of the application state
 */
-export const useNotes = () => notes.slice()
+export const useNotes = () => notes.sort((c,n) => n.timestamp - c.timestamp).slice()
 
 /*
     Get the state of the notes from the API into the application

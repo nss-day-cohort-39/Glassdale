@@ -28,7 +28,12 @@ eventHub.addEventListener("allNotesClicked", customEvent => {
 })
 
 const render = () => {
-    contentTarget.classList.add("invisible")
+    if (visibility) {
+        contentTarget.classList.remove("invisible")
+    }
+    else {
+        contentTarget.classList.add("invisible")
+    }
 
     getNotes().then(() => {
         const allTheNotes = useNotes()
