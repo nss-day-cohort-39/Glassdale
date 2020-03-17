@@ -11,6 +11,18 @@
       "criminal": "Madi Peper",
       "timestamp": 1584384742515,
       "id": 3
+    },
+    {
+      "noteText": "Too clever for his own good",
+      "criminal": "Parker",
+      "timestamp": 1584459174513,
+      "id": 4
+    },
+    {
+      "noteText": "Too stylish to have committed this crime",
+      "criminal": "Adrienne Howell",
+      "timestamp": 1584459470592,
+      "id": 5
     }
   ]
 }
