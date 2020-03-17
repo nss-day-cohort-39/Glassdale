@@ -4,8 +4,8 @@ import { getConvictions } from "./convictions/ConvictionProvider.js"
 import ConvictionSelect from "./convictions/ConvictionSelect.js"
 import NoteForm from "./notes/NoteForm.js"
 import { DisplayNotesButton } from "./notes/DisplayNotesButton.js"
-import "./notes/NotesList.js"
 import { DisplayNoteFormButton } from "./notes/DisplayNoteFormButton.js"
+import { NotesList } from "./notes/NotesList.js"
 
 getCriminals().then(CriminalList)
 
@@ -15,3 +15,4 @@ getConvictions().then(ConvictionSelect)
 DisplayNotesButton()
 DisplayNoteFormButton()
 NoteForm()
+NotesList()

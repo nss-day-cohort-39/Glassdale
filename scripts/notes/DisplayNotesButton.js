@@ -1,7 +1,6 @@
 const contentTarget = document.querySelector(".notes__button")
 const eventHub = document.querySelector(".container")
 
-
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "showAllNotes") {
         // Create a custom event to tell any interested component that the user wants to see notes
@@ -13,5 +12,5 @@ contentTarget.addEventListener("click", clickEvent => {
 })
 
 export const DisplayNotesButton = () => {
-    contentTarget.innerHTML = "<button id='showAllNotes'>Show All Notes</button>"
+    contentTarget.innerHTML = "<button id='showAllNotes'>Toggle Notes List</button>"
 }
