@@ -14,3 +14,4 @@ getConvictions().then(ConvictionSelect)
 
 DisplayNotesButton()
 DisplayNoteFormButton()
+NoteForm()
