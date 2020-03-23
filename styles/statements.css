@@ -1,0 +1,15 @@
+.statementContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.statement {
+    border: 4px dotted greenyellow;
+    background-color: lightcoral;
+    margin: .5em;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    padding: 0.3rem 1.5rem;
+}
