@@ -3,6 +3,7 @@ import { Criminal } from "./Criminal.js";
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
+let youCanSeeMe = true
 
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("associates--")) {
@@ -20,6 +21,15 @@ contentTarget.addEventListener("click", clickEvent => {
         eventHub.dispatchEvent(showAssociatesEvent)
     }
 })
+
+eventHub.addEventListener("witnessButtonClicked", customEvent => {
+    youCanSeeMe = !youCanSeeMe
+
+    youCanSeeMe
+        ? contentTarget.classList.remove("invisible")
+        : contentTarget.classList.add("invisible")
+})
+
 
 eventHub.addEventListener("crimeChosen", event => {
     // What crime was chosen?
