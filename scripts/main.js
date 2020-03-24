@@ -1,13 +1,13 @@
-import { getCriminals } from "./criminals/CriminalProvider.js"
-import { CriminalList } from "./criminals/CriminalList.js"
-import { getConvictions } from "./convictions/ConvictionProvider.js"
-import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
-import { DisplayNotesButton } from "./notes/DisplayNotesButton.js"
-import { DisplayNoteFormButton } from "./notes/DisplayNoteFormButton.js"
+import "./witnesses/WitnessList.js"
+import "./criminals/KnownAssociatesDialog.js"
 import { NoteForm } from "./notes/NoteForm.js"
 import { NotesList } from "./notes/NotesList.js"
-import "./criminals/KnownAssociatesDialog.js"
-import "./witnesses/WitnessList.js"
+import { CriminalList } from "./criminals/CriminalList.js"
+import { getCriminals } from "./criminals/CriminalProvider.js"
+import { DisplayNotesButton } from "./notes/DisplayNotesButton.js"
+import { getConvictions } from "./convictions/ConvictionProvider.js"
+import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
+import { DisplayNoteFormButton } from "./notes/DisplayNoteFormButton.js"
 import { WitnessStatementButton } from "./witnesses/WitnessStatementButton.js"
 
 getCriminals()
@@ -15,10 +15,9 @@ getCriminals()
     .then(NotesList)
     .then(NoteForm)
 
-getConvictions().then(ConvictionSelect)
+getConvictions()
+    .then(ConvictionSelect)
 
 DisplayNotesButton()
 DisplayNoteFormButton()
-
-
 WitnessStatementButton()
