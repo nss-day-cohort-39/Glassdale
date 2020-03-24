@@ -10,11 +10,15 @@ import "./criminals/KnownAssociatesDialog.js"
 import "./witnesses/WitnessList.js"
 import { WitnessStatementButton } from "./witnesses/WitnessStatementButton.js"
 
-getCriminals().then(CriminalList)
+getCriminals()
+    .then(CriminalList)
+    .then(NotesList)
+    .then(NoteForm)
+
 getConvictions().then(ConvictionSelect)
 
 DisplayNotesButton()
 DisplayNoteFormButton()
-NoteForm()
-NotesList()
+
+
 WitnessStatementButton()
