@@ -5,6 +5,12 @@
       "criminal": 18,
       "timestamp": 1585059677713,
       "id": 9
+    },
+    {
+      "noteText": "New notes",
+      "criminal": 52,
+      "timestamp": 1585246035137,
+      "id": 10
     }
   ]
 }

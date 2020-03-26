@@ -16,3 +16,7 @@
 .invisible {
     display:none;
 }
+
+.radio--verticalCenter {
+    vertical-align: text-top;
+}

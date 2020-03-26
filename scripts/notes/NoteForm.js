@@ -4,20 +4,24 @@ import { useCriminals } from "../criminals/CriminalProvider.js"
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
 
-let visibility = false
+/*
+    Component state variables
+*/
+let visible = false
 
+const setVisible = (newViz) => {
+    visible = newViz
+    render()
+}
+
+
+/*
+    Event handlers
+*/
 eventHub.addEventListener("noteFormButtonClicked", customEvent => {
-    visibility = !visibility
-
-    if (visibility) {
-        contentTarget.classList.remove("invisible")
-    }
-    else {
-        contentTarget.classList.add("invisible")
-    }
+    setVisible(!visible)
 })
 
-// Handle browser-generated click event in component
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
 
@@ -37,17 +41,16 @@ contentTarget.addEventListener("click", clickEvent => {
 })
 
 const render = () => {
-    contentTarget.classList.add("invisible")
     const allCriminals = useCriminals()
 
-    contentTarget.innerHTML = `
+    contentTarget.innerHTML = !visible ? "" : `
         <fieldset>
-            <label class="label label--notes" for="noteText">Note:</label>
-            <textarea id="noteText"></textarea>
+            <label class="label label--notes label--wide" for="noteText">Note:</label>
+            <textarea class=".input--text" id="noteText"></textarea>
         </fieldset>
         <fieldset>
-            <label class="label label--notes" for="criminal">Criminal:</label>
-            <select id="criminalDropdown">
+            <label class="label label--notes label--wide" for="criminal">Criminal:</label>
+            <select id="criminalDropdown" class=".input--text">
                 <option value="0">Please choose a criminal...</option>
                 ${
                     allCriminals.map(
