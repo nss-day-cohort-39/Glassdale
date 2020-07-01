@@ -17,7 +17,7 @@ export const useNotes = () => notes.sort((c,n) => n.timestamp - c.timestamp).sli
     Get the state of the notes from the API into the application
 */
 export const getNotes = () => {
-    return fetch('http://localhost:8088/notes')
+    return fetch('http://localhost:8089/notes')
         .then(response => response.json())
         .then(parsedNotes => {
             notes = parsedNotes
@@ -25,7 +25,7 @@ export const getNotes = () => {
 }
 
 export const deleteNote = noteId => {
-    return fetch(`http://localhost:8088/notes/${noteId}`, {
+    return fetch(`http://localhost:8089/notes/${noteId}`, {
         method: "DELETE"
     })
         .then(getNotes)
@@ -33,7 +33,7 @@ export const deleteNote = noteId => {
 }
 
 export const saveNote = note => {
-    return fetch('http://localhost:8088/notes', {
+    return fetch('http://localhost:8089/notes', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

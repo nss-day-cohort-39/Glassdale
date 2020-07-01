@@ -1,5 +1,6 @@
-import { useCriminals, getCriminals } from "./CriminalProvider.js";
+import { useCriminals, getCriminals, useCriminalFacilities, getCriminalFacilities } from "./CriminalProvider.js";
 import { Criminal } from "./Criminal.js";
+import { useFacilities, getFacilities } from "../facilities/FacilityProvider.js";
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -30,6 +31,14 @@ eventHub.addEventListener("witnessButtonClicked", customEvent => {
         : contentTarget.classList.add("invisible")
 })
 
+eventHub.addEventListener("allFacilitiesClicked", customEvent => {
+    youCanSeeMe = !youCanSeeMe
+
+    youCanSeeMe
+        ? contentTarget.classList.remove("invisible")
+        : contentTarget.classList.add("invisible")
+})
+
 
 eventHub.addEventListener("crimeChosen", event => {
     // What crime was chosen?
@@ -50,15 +59,28 @@ eventHub.addEventListener("crimeChosen", event => {
     render(criminalsToDisplay)
 })
 
-const render = criminalsToRender => {
+const render = (criminalsToRender, allFacilities, allRelationships) => {
     contentTarget.innerHTML = criminalsToRender.map(
         (criminalObject) => {
-            return Criminal(criminalObject)
+            const facilityRelationshipsForThisCriminal = allRelationships.filter(cf => cf.criminalId === criminalObject.id)
+            const facilities = facilityRelationshipsForThisCriminal.map(cf => {
+                const matchingFacilityObject = allFacilities.find(facility => facility.id === cf.facilityId)
+                return matchingFacilityObject
+            })
+            // debugger
+            return Criminal(criminalObject, facilities)
         }
     ).join("")
 }
 
 export const CriminalList = () => {
-    const criminals = useCriminals()
-    render(criminals)
+    getFacilities()
+        .then(() => getCriminalFacilities())
+        .then(() => {
+            const facilities = useFacilities()
+            const crimFac = useCriminalFacilities()
+            const criminals = useCriminals()
+
+            render(criminals, facilities, crimFac)
+        })
 }

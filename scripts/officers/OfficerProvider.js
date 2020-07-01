@@ -5,7 +5,7 @@ export const useOfficers = () => {
 }
 
 export const getOfficers = () => {
-    return fetch("https://criminals.glassdale.us/officers")
+    return fetch("http://localhost:8088/officers")
         .then(response => response.json())
         .then(
             (parsedOfficers) => {
